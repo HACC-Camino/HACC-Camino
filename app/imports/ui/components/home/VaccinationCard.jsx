@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card, Grid, Header, List } from 'semantic-ui-react';
+import { Card, Grid, Header, List } from 'semantic-ui-react';
+import AddVaccineDataModal from '../vaccine/AddVaccineDataModal';
 
 const VaccinationCard = ({ vaccineData }) => (
       <Card fluid>
@@ -31,13 +32,11 @@ const VaccinationCard = ({ vaccineData }) => (
               </List> : null
           }
           <Grid.Column textAlign={'center'}>
-            <Button
-                content={
+                {
                   vaccineData.length ?
                       'See Vaccination Card' :
-                      'Upload Vaccination Card'
+                  <AddVaccineDataModal/>
                 }
-            />
           </Grid.Column>
         </Card.Content>
       </Card>
