@@ -1,8 +1,8 @@
 import { Meteor } from 'meteor/meteor';
-import { Stuffs } from '../../api/stuff/StuffCollection';
+import { VaccineData } from '../../api/vaccine/VaccineDataCollection';
 
 /** Publish all the collections you need. */
-Stuffs.publish();
+VaccineData.publish();
 
 /** Need this for the alanning:roles package */
 Meteor.publish(null, function () {
