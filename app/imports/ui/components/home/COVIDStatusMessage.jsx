@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon, List, Message } from 'semantic-ui-react';
+import { Icon, Message } from 'semantic-ui-react';
 
 const COVIDStatusMessage = ({ healthStatus, vaccineData }) => {
   const COVIDStatus = 1;
