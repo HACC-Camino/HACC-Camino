@@ -18,9 +18,10 @@ if (Stuffs.count() === 0) {
   }
 }
 
+/** Initialize the collection if empty. */
 if (VaccineData.count() === 0) {
   if (Meteor.settings.defaultVaccineData) {
+    console.log('Creating default vaccine data.');
     Meteor.settings.defaultVaccineData.map(vaccineData => VaccineData.define(vaccineData));
-    console.log(`   vaccineDataCollection: ${VaccineData.count()} user vaccine data`);
   }
 }

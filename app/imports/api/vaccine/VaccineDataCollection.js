@@ -85,14 +85,14 @@ class VaccineDataCollection extends BaseCollection {
     }
   }
 
-  subscribeVaccineData() {
+  subscribeVaccine() {
     if (Meteor.isClient) {
       return Meteor.subscribe(vaccineDataPublications.vaccineData);
     }
     return null;
   }
 
-  subscribeVaccineDataAdmin() {
+  subscribeVaccineAdmin() {
     if (Meteor.isClient) {
       return Meteor.subscribe(vaccineDataPublications.vaccineDataAdmin);
     }

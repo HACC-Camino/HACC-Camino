@@ -18,13 +18,15 @@ const VaccinationCard = ({ vaccineData }) => (
               <List>
                 <List.Item>
                   <List.Header>1st Dose COVID-19</List.Header>
-                  <List.Description>Moderna COVID-19 (0XXXXXX)</List.Description>
-                  <List.Description>28 Feb 2021 at LCC POD</List.Description>
+                  <List.Description>{vaccineData[0].vaccineName} ({vaccineData[0].fDoseLotNum})</List.Description>
+                  <List.Description> {vaccineData[0].fDoseDate.toLocaleDateString()}
+                    at {vaccineData[0].fDoseSite}</List.Description>
                 </List.Item>
                 <List.Item>
                   <List.Header>2nd Dose COVID-19</List.Header>
-                  <List.Description>Moderna COVID-19 (0XXXXXX)</List.Description>
-                  <List.Description>28 Mar 2021 at LCC POD</List.Description>
+                  <List.Description>{vaccineData[0].vaccineName} ({vaccineData[0].sDoseLotNum})</List.Description>
+                  <List.Description>{vaccineData[0].sDoseDate.toLocaleDateString()}
+                    at {vaccineData[0].sDoseSite}</List.Description>
                 </List.Item>
               </List> : null
           }
