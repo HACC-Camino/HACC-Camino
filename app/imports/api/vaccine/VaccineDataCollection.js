@@ -65,7 +65,6 @@ class VaccineDataCollection extends BaseCollection {
 
   publish() {
     if (Meteor.isServer) {
-      // get the StuffCollection instance.
       const instance = this;
 
       Meteor.publish(vaccineDataPublications.vaccineData, function publish() {
@@ -101,4 +100,4 @@ class VaccineDataCollection extends BaseCollection {
 
 }
 
-export const VaccineData = new VaccineDataCollection();
+export const VaccineDatas = new VaccineDataCollection();

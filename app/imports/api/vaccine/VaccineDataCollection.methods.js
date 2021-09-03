@@ -1,16 +1,16 @@
 import { Meteor } from 'meteor/meteor';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { CallPromiseMixin } from 'meteor/didericis:callpromise-mixin';
-import { VaccineData } from './VaccineDataCollection';
+import { VaccineDatas } from './VaccineDataCollection';
 
 export const VaccineDataDefineMethod = new ValidatedMethod({
   name: 'VaccineDataCollection.define',
   mixins: [CallPromiseMixin],
   validate: null,
   run(definitionData) {
-    console.log('VaccineDataDefineMethod', definitionData);
     if (Meteor.isServer) {
-      return VaccineData.define(definitionData);
+      const docID = VaccineDatas.define(definitionData);
+      return docID;
     }
     return '';
   },
@@ -21,7 +21,7 @@ export const userDailyDataUpdateMethod = new ValidatedMethod({
   mixins: [CallPromiseMixin],
   validate: null,
   run(updateData) {
-    VaccineData.update(updateData._id, updateData);
+    VaccineDatas.update(updateData._id, updateData);
     return true;
   },
 });
