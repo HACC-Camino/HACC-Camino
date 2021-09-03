@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SimpleSchema from 'simpl-schema';
+import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import {
   AutoForm,
@@ -11,7 +12,7 @@ import {
 import { Button, Modal, Header, Form } from 'semantic-ui-react';
 import swal from 'sweetalert';
 import { getDateToday } from '../../utilities/form';
-import { VaccineDataDefineMethod } from '../../../api/vaccine/VaccineDataCollection.method';
+import { VaccineDataDefineMethod } from '../../../api/vaccine/VaccineDataCollection.methods';
 
 const AddVaccineDataModal = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -33,8 +34,12 @@ const AddVaccineDataModal = () => {
   });
 
   const handleSubmit = (data) => {
-    const definitionData = { data };
-    VaccineDataDefineMethod.call(definitionData, (error) => (error ?
+    const { vaccineName, fDoseLotNum, fDoseDate, fDoseSite, sDoseLotNum, sDoseDate, sDoseSite } = data;
+    const owner = Meteor.user().username;
+    VaccineDataDefineMethod.call({
+      owner, vaccineName, fDoseLotNum, fDoseDate,
+      fDoseSite, sDoseLotNum, sDoseDate, sDoseSite },
+    (error) => (error ?
     swal('Error', error.message, 'error') :
     swal('Success', 'Data added successfully', 'success').then(() => handleModalClose())));
   };

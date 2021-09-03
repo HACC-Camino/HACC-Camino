@@ -8,6 +8,7 @@ export const VaccineDataDefineMethod = new ValidatedMethod({
   mixins: [CallPromiseMixin],
   validate: null,
   run(definitionData) {
+    console.log('VaccineDataDefineMethod', definitionData);
     if (Meteor.isServer) {
       return VaccineData.define(definitionData);
     }
