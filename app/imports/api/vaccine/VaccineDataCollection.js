@@ -98,6 +98,10 @@ class VaccineDataCollection extends BaseCollection {
     return null;
   }
 
+  getUserVaccineData(username) {
+    return this._collection.find({ owner: username }, {}).fetch();
+  }
+
 }
 
 export const VaccineDatas = new VaccineDataCollection();

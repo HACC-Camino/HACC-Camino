@@ -55,7 +55,7 @@ export default withTracker(() => {
        && VaccineDatas.subscribeVaccine().ready()
        && username !== undefined;
   const todayHealthStatus = HealthStatuses.getTodayHealthStatus(username);
-  const vaccineData = VaccineDatas.find({ owner: username }, {}).fetch();
+  const vaccineData = VaccineDatas.getUserVaccineData(username);
   return {
     ready,
     todayHealthStatus,
