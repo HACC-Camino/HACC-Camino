@@ -90,6 +90,11 @@ class HealthStatusCollection extends BaseCollection {
   getLatestHealthStatus(username) {
     return this.getHealthStatusesSortedDate(username)[0] || {};
   }
+
+  getTodayHealthStatus(username) {
+    return this.getHealthStatusesSortedDate(username)
+        .find(({ date }) => date.toLocaleDateString() === (new Date()).toLocaleDateString());
+  }
 }
 
 export const HealthStatuses = new HealthStatusCollection();

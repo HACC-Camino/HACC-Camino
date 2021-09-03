@@ -7,12 +7,13 @@ import { VaccineDatas } from '../../api/vaccine/VaccineDataCollection';
 import ResourcesCard from '../components/home/ResourcesCard';
 import CheckInCard from '../components/home/CheckInCard';
 import VaccinationCard from '../components/home/VaccinationCard';
-import COVIDStatusMessage from '../components/home/COVIDStatusMessage';
+import COVIDStatusModal from '../components/health/COVIDStatusModal';
+import { HealthStatuses } from '../../api/health-status/HealthStatusCollection';
 
 const Home = (
     {
       ready,
-      healthStatus,
+      todayHealthStatus,
       vaccineData,
     },
 ) => (ready ? (
@@ -25,8 +26,8 @@ const Home = (
 
             <Grid.Row columns={2}>
               <Grid.Column computer={10}>
-                <COVIDStatusMessage
-                    healthStatus={healthStatus}
+                <COVIDStatusModal
+                    healthStatus={todayHealthStatus}
                     vaccineData={vaccineData}
                 />
                 <CheckInCard/>
@@ -44,21 +45,20 @@ const Home = (
 
 Home.propTypes = {
   ready: PropTypes.bool.isRequired,
-  healthStatus: PropTypes.object.isRequired,
+  todayHealthStatus: PropTypes.object,
   vaccineData: PropTypes.array.isRequired,
 };
 
 export default withTracker(() => {
   const username = Meteor.user()?.username;
-  const ready = VaccineDatas.subscribeVaccine().ready() && username !== undefined;
-  // const ready = HealthStatuses.subscribeHealthStatus().ready()
-  //     && Vaccines.subscribeVaccine().ready()
-  //     && username !== undefined;
-  const healthStatus = {}; // latest Health Status
-  const vaccineData = VaccineDatas.find({ owner: username }, {}).fetch(); // vaccines
+  const ready = HealthStatuses.subscribeHealthStatus().ready()
+       && VaccineDatas.subscribeVaccine().ready()
+       && username !== undefined;
+  const todayHealthStatus = HealthStatuses.getTodayHealthStatus(username);
+  const vaccineData = VaccineDatas.find({ owner: username }, {}).fetch();
   return {
     ready,
-    healthStatus,
+    todayHealthStatus,
     vaccineData,
   };
 })(Home);
