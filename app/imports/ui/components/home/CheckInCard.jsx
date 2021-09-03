@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Card, Grid, Header, Label, List } from 'semantic-ui-react';
+import { Card, Grid, Header, Label, List } from 'semantic-ui-react';
+import DailyCheckInModal from '../health/DailyCheckInModal';
 
 const CheckInCard = () => (
     <Card fluid>
@@ -22,7 +23,7 @@ const CheckInCard = () => (
         </List>
 
         <Grid.Column textAlign={'center'}>
-          <Button content={'Complete Daily Check-in'}/>
+          <DailyCheckInModal/>
         </Grid.Column>
       </Card.Content>
     </Card>

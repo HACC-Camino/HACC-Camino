@@ -46,7 +46,7 @@ const AddVaccineDataModal = () => {
   const bridge = new SimpleSchema2Bridge(formSchema);
 
   return (
-  <Modal size='tiny'
+  <Modal size='small'
          closeIcon
          open={modalOpen}
          onClose={handleModalClose}
