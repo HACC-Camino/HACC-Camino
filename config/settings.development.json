@@ -15,5 +15,11 @@
     {"owner": "admin@foo.com", "vaccineName": "Moderna COVID-19", "fDoseLotNum": "0XXXXXX",
     "fDoseDate":  "28 Feb 2021", "fDoseSite":  "LCC POD",  "sDoseLotNum": "0XXXXXX",
       "sDoseDate":  "28 Mar 2021", "sDoseSite":  "LCC POD"}
+  ],
+  "defaultHealthStatuses" : [
+    { "date":  "9/2/2021 03:11:25", "clear" : true, "owner": "john@foo.com" },
+    { "date":  "9/1/2021 13:10:09", "clear" : true, "owner": "john@foo.com" },
+    { "date":  "9/1/2021 09:11:42", "clear" : false, "owner": "john@foo.com" },
+    { "date":  "8/28/2021 05:08:07", "clear" : true, "owner": "john@foo.com" }
   ]
 }
