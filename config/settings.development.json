@@ -12,7 +12,7 @@
   ],
 
   "defaultVaccineData": [
-    {"owner": "john@foo.com", "vaccineName": "Moderna COVID-19", "fDoseLotNum": "0XXXXXX",
+    {"owner": "admin@foo.com", "vaccineName": "Moderna COVID-19", "fDoseLotNum": "0XXXXXX",
     "fDoseDate":  "28 Feb 2021", "fDoseSite":  "LCC POD",  "sDoseLotNum": "0XXXXXX",
       "sDoseDate":  "28 Mar 2021", "sDoseSite":  "LCC POD"}
   ]

@@ -41,7 +41,7 @@ const AddVaccineDataModal = () => {
       fDoseSite, sDoseLotNum, sDoseDate, sDoseSite },
     (error) => (error ?
     swal('Error', error.message, 'error') :
-    swal('Success', 'Data added successfully', 'success').then(() => handleModalClose())));
+    swal('Success', 'Vaccine Data Added Successfully', 'success').then(() => handleModalClose())));
   };
   const bridge = new SimpleSchema2Bridge(formSchema);
 
