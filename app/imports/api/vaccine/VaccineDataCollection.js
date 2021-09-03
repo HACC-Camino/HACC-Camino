@@ -4,8 +4,8 @@ import { Roles } from 'meteor/alanning:roles';
 import BaseCollection from '../base/BaseCollection';
 
 export const vaccineDataPublications = {
-  vaccineData: 'vaccineData',
-  vaccineDataAdmin: 'vaccineDataAdmin',
+  vaccineData: 'VaccineData',
+  vaccineDataAdmin: 'VaccineDataAdmin',
 };
 
 class VaccineDataCollection extends BaseCollection {

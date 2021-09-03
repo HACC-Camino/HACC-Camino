@@ -16,7 +16,7 @@ export const VaccineDataDefineMethod = new ValidatedMethod({
 });
 
 export const userDailyDataUpdateMethod = new ValidatedMethod({
-  name: 'VaccineDataDataCollection.update',
+  name: 'VaccineDataCollection.update',
   mixins: [CallPromiseMixin],
   validate: null,
   run(updateData) {
