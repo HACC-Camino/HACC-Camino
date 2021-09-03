@@ -1,29 +1,33 @@
 import React, { useState } from 'react';
 import SimpleSchema from 'simpl-schema';
+import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import {
   AutoForm,
 } from 'uniforms-semantic';
 import { Button, Modal, List, Form } from 'semantic-ui-react';
+import swal from 'sweetalert';
+import { getDateToday } from '../../utilities/form';
+import { healthStatusDefineMethod } from '../../../api/health-status/HealthStatusCollection.methods';
 
 const DailyCheckInModal = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const handleModalOpen = () => setModalOpen(true);
   const handleModalClose = () => setModalOpen(false);
-  const [symptoms, setSymptoms] = useState('false');
-  const handleSymptoms = (e, { value }) => setSymptoms(value);
+  const [clear, setClear] = useState(false);
+  const handleSymptoms = (e, { value }) => (value === 'true' ? setClear(true) : setClear(false));
 
   const HandleSymptomsForm = () => (
   <div>
     <Form.Group inline>
       <Form.Radio label='NO'
-                  value='false'
-                  checked={symptoms === 'false'}
+                  value='true'
+                  checked={clear === true}
                   onChange={handleSymptoms}
       />
       <Form.Radio label='YES'
-                  value='true'
-                  checked={symptoms === 'true'}
+                  value='false'
+                  checked={clear === false}
                   onChange={handleSymptoms}
       />
     </Form.Group>
@@ -31,18 +35,17 @@ const DailyCheckInModal = () => {
   );
 
   const formSchema = new SimpleSchema({
-    symptoms: Boolean,
+    clear: Boolean,
   });
 
   const handleSubmit = () => {
-    // const owner = Meteor.user().username;
-    // VaccineDataDefineMethod.call({
-    //   owner, vaccineName, fDoseLotNum, fDoseDate,
-    //   fDoseSite, sDoseLotNum, sDoseDate, sDoseSite },
-    // (error) => (error ?
-    // swal('Error', error.message, 'error') :
-    // swal('Success', 'Vaccine Data Added Successfully', 'success').then(() => handleModalClose())));
-    console.log(symptoms);
+    const owner = Meteor.user().username;
+    const date = getDateToday();
+    healthStatusDefineMethod.call({
+      owner, clear, date },
+    (error) => (error ?
+    swal('Error', error.message, 'error') :
+    swal('Success', 'Vaccine Data Added Successfully', 'success').then(() => handleModalClose())));
   };
   const bridge = new SimpleSchema2Bridge(formSchema);
 
