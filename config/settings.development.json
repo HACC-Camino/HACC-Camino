@@ -9,5 +9,11 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+
+  "defaultVaccineData": [
+    {"owner": "admin@foo.com", "vaccineName": "Moderna COVID-19", "fDoseLotNum": "0XXXXXX",
+    "fDoseDate":  "28 Feb 2021", "fDoseSite":  "LCC POD",  "sDoseLotNum": "0XXXXXX",
+      "sDoseDate":  "28 Mar 2021", "sDoseSite":  "LCC POD"}
   ]
 }

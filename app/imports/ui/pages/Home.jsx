@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Grid, Header, Loader } from 'semantic-ui-react';
+import { VaccineDatas } from '../../api/vaccine/VaccineDataCollection';
 import ResourcesCard from '../components/home/ResourcesCard';
 import CheckInCard from '../components/home/CheckInCard';
 import VaccinationCard from '../components/home/VaccinationCard';
@@ -49,12 +50,12 @@ Home.propTypes = {
 
 export default withTracker(() => {
   const username = Meteor.user()?.username;
-  const ready = username !== undefined; // delete when collections are ready
+  const ready = VaccineDatas.subscribeVaccine().ready() && username !== undefined;
   // const ready = HealthStatuses.subscribeHealthStatus().ready()
   //     && Vaccines.subscribeVaccine().ready()
   //     && username !== undefined;
   const healthStatus = {}; // latest Health Status
-  const vaccineData = []; // vaccines
+  const vaccineData = VaccineDatas.find({ owner: username }, {}).fetch(); // vaccines
   return {
     ready,
     healthStatus,

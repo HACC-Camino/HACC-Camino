@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/StuffCollection.js';
+import { VaccineDatas } from '../../api/vaccine/VaccineDataCollection';
 
 /* eslint-disable no-console */
 
@@ -14,5 +15,13 @@ if (Stuffs.count() === 0) {
   if (Meteor.settings.defaultData) {
     console.log('Creating default data.');
     Meteor.settings.defaultData.map(data => addData(data));
+  }
+}
+
+/** Initialize the collection if empty. */
+if (VaccineDatas.count() === 0) {
+  if (Meteor.settings.defaultVaccineData) {
+    console.log('Creating default vaccine data.');
+    Meteor.settings.defaultVaccineData.map(vaccineData => VaccineDatas.define(vaccineData));
   }
 }
