@@ -7,14 +7,13 @@ import {
 } from 'uniforms-semantic';
 import { Button, Modal, List, Form } from 'semantic-ui-react';
 import swal from 'sweetalert';
-import { getDateToday } from '../../utilities/form';
 import { healthStatusDefineMethod } from '../../../api/health-status/HealthStatusCollection.methods';
 
 const DailyCheckInModal = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const handleModalOpen = () => setModalOpen(true);
   const handleModalClose = () => setModalOpen(false);
-  const [clear, setClear] = useState(false);
+  const [clear, setClear] = useState(true);
   const handleSymptoms = (e, { value }) => (value === 'true' ? setClear(true) : setClear(false));
 
   const HandleSymptomsForm = () => (
@@ -40,7 +39,7 @@ const DailyCheckInModal = () => {
 
   const handleSubmit = () => {
     const owner = Meteor.user().username;
-    const date = getDateToday();
+    const date = new Date();
     healthStatusDefineMethod.call({
       owner, clear, date },
     (error) => (error ?

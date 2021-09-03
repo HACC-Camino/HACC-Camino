@@ -11,7 +11,6 @@ import {
 } from 'uniforms-semantic';
 import { Button, Modal, Header, Form } from 'semantic-ui-react';
 import swal from 'sweetalert';
-import { getDateToday } from '../../utilities/form';
 import { VaccineDataDefineMethod } from '../../../api/vaccine/VaccineDataCollection.methods';
 
 const AddVaccineDataModal = () => {
@@ -67,7 +66,7 @@ const AddVaccineDataModal = () => {
                    placeholder={'Healthcare Professional or Clinic Site'}/>
       </Form.Group>
       <DateField name='fDoseDate'
-                 max={getDateToday()}
+                 max={new Date()}
       />
       <Header as='h3' dividing>Second Dose</Header>
       <Form.Group widths={'equal'}>
@@ -76,7 +75,7 @@ const AddVaccineDataModal = () => {
                    placeholder={'Healthcare Professional or Clinic Site'}/>
       </Form.Group>
       <DateField name='sDoseDate'
-                 max={getDateToday()}
+                 max={new Date()}
       />
     </Modal.Content>
     <Modal.Actions>
