@@ -1,13 +1,13 @@
 import React from 'react';
 import { Accounts } from 'meteor/accounts-base';
 import { Form, Message, Segment } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class SignUpForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '' };
+    this.state = { email: '', email2: '', password: '', password2: '', error: '', hasSignedUp: false };
   }
 
   handleChange = (e, { name, value }) => {
@@ -16,22 +16,26 @@ class SignUpForm extends React.Component {
 
   submit = () => {
     const { email, password } = this.state;
-    Accounts.createUser({ email, username: email, password }, (err) => {
-      if (err) {
-        this.setState({ error: err.reason });
-      } else {
-        this.setState({ error: '', redirectToReferer: true });
-      }
-    });
+      Accounts.createUser({ email, username: email, password }, (err) => {
+        if (err) {
+          this.setState({ error: err.reason });
+        } else {
+          this.setState({ error: '', hasSignedUp: true });
+        }
+      });
   }
 
   render() {
+    if (this.state.hasSignedUp) {
+      return <Redirect to={'/home'}/>;
+    }
     return (
         <div>
           <Segment>
             <Form onSubmit={this.submit}>
               <Segment stacked>
                 <Form.Input
+                    id="user"
                     label="Email"
                     icon="user"
                     iconPosition="left"
@@ -41,11 +45,32 @@ class SignUpForm extends React.Component {
                     onChange={this.handleChange}
                 />
                 <Form.Input
+                    id="confirm_user"
+                    label="Confirm E-mail address"
+                    icon="user"
+                    iconPosition="left"
+                    name="email"
+                    type="email"
+                    placeholder="Confirm E-mail address"
+                    onChange={this.handleChange}
+                />
+                <Form.Input
+                    id="password"
                     label="Password"
                     icon="lock"
                     iconPosition="left"
                     name="password"
                     placeholder="Password"
+                    type="password"
+                    onChange={this.handleChange}
+                />
+                <Form.Input
+                    id="confirm_password"
+                    label="Confirm Password"
+                    icon="lock"
+                    iconPosition="left"
+                    name="password"
+                    placeholder="Confirm Password"
                     type="password"
                     onChange={this.handleChange}
                 />

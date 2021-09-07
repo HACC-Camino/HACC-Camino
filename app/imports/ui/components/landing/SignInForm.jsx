@@ -1,13 +1,13 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Form, Message, Segment } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 export default class SignInForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '' };
+    this.state = { email: '', password: '', error: '', hasSignedIn: false };
   }
 
   handleChange = (e, { name, value }) => {
@@ -20,13 +20,16 @@ export default class SignInForm extends React.Component {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        this.setState({ error: '', redirectToReferer: true });
+        this.setState({ error: '', hasSignedIn: true });
       }
     });
-    console.log('1');
+    //  console.log('1');
   }
 
   render() {
+    if (this.state.hasSignedIn) {
+      return <Redirect to={'/home'}/>;
+    }
     return (
         <div>
           <Segment>
