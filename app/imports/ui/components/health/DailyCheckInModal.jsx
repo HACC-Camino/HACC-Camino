@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
-import SimpleSchema from 'simpl-schema';
 import { Meteor } from 'meteor/meteor';
-import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import {
-  AutoForm,
-} from 'uniforms-semantic';
 import { Button, Modal, List, Form } from 'semantic-ui-react';
 import swal from 'sweetalert';
 import { healthStatusDefineMethod } from '../../../api/health-status/HealthStatusCollection.methods';
@@ -33,10 +28,6 @@ const DailyCheckInModal = () => {
   </div>
   );
 
-  const formSchema = new SimpleSchema({
-    clear: Boolean,
-  });
-
   const handleSubmit = () => {
     const owner = Meteor.user().username;
     const date = new Date();
@@ -46,7 +37,6 @@ const DailyCheckInModal = () => {
     swal('Error', error.message, 'error') :
     swal('Success', 'Vaccine Data Added Successfully', 'success').then(() => handleModalClose())));
   };
-  const bridge = new SimpleSchema2Bridge(formSchema);
 
   return (
   <Modal size='small'
@@ -55,8 +45,6 @@ const DailyCheckInModal = () => {
          onClose={handleModalClose}
          onOpen={handleModalOpen}
          trigger={<Button>Complete Daily Check-in</Button>}
-         as={AutoForm}
-         schema={bridge}
          style = {{ fontSize: '17px' }}
   >
     <Modal.Header>Do any of the following apply to you?</Modal.Header>
