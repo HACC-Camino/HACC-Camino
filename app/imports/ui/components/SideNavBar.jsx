@@ -96,8 +96,8 @@ class SideNavBar extends React.Component {
 
 // Declare the types of all properties.
 SideNavBar.propTypes = {
-  currentUser: PropTypes.string,
-  ready: PropTypes.bool.isRequired,
+  currentUser: PropTypes.string
+  ready: PropTypes.bool.isRequired
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
