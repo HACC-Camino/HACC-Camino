@@ -79,13 +79,12 @@ class SideNavBar extends React.Component {
               </IconGroup>
             </Menu.Item>
             <Menu.Item style={{ width: '100%' }} id="navbar-Prereq"
-                       as={NavLink} exact to="">
+                       as={NavLink} exact to="/more" onClick={this.handleShowClick}>
               <IconGroup>
                 <Icon name='pencil square'/>
-                Profile
+                More
               </IconGroup>
             </Menu.Item>
-            )
             <SignOutConfirmation id="navbar-sign-out" as={NavLink}
                                  exact to="/signout" style={{ padding: 0, margin: 0 }}/>
           </Sidebar>
