@@ -6,11 +6,12 @@ const SignInModal = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
+      <div className='login-modal'>
       <Modal
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
           open={open}
-          trigger={<Button>Sign In</Button>}
+          trigger={<Button color='yellow'>Sign In</Button>}
           closeIcon
       >
         <Modal.Content>
@@ -18,6 +19,7 @@ const SignInModal = () => {
         </Modal.Content>
         <SignInForm/>
       </Modal>
+      </div>
   );
 };
 

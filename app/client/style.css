@@ -1,0 +1,30 @@
+/* LANDING PAGE */
+/* body {background-color: #001D3D} */
+.background-landing {
+   color: #FFD60A;
+    padding-top: 80px;
+}
+.landing-text {
+    font-family: 'Saira Semi Condensed', sans-serif;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.login-modal {
+    font-family: 'Saira Semi Condensed', sans-serif;
+    color: #FFD60A;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.ui.button {
+    color: #FFD60A;
+}
+/* Font Family Import */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Saira Semi Condensed', sans-serif !important;
+}
