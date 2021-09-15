@@ -10,6 +10,8 @@ import VaccinationCard from '../components/home/VaccinationCard';
 import COVIDStatusModal from '../components/health/COVIDStatusModal';
 import { HealthStatuses } from '../../api/health-status/HealthStatusCollection';
 
+const padding = { paddingTop: 30, marginLeft: 35 };
+
 const Home = (
     {
       ready,
@@ -17,10 +19,11 @@ const Home = (
       vaccineData,
     },
 ) => (ready ? (
+        <div style={padding}>
           <Grid container stackable>
             <Grid.Row>
               <Grid.Column>
-                <Header as={'h2'} content={'On-Campus Check-in'}/>
+                <Header as={'h2'} content={'On-Campus Check-in'} color='yellow'/>
               </Grid.Column>
             </Grid.Row>
 
@@ -39,6 +42,7 @@ const Home = (
               </Grid.Column>
             </Grid.Row>
           </Grid>
+        </div>
       ) :
       <Loader active>Getting Trip Data</Loader>
 );

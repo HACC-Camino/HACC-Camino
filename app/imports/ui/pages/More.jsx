@@ -6,23 +6,24 @@ import { Divider, Grid, Header, Icon } from 'semantic-ui-react';
 // affiliation status
 // housing status
 // online studying/working status
+const padding = { paddingTop: 20, marginLeft: 35 };
 
 class More extends React.Component {
   render() {
     return (
-
+      <div style={padding}>
       <Grid container>
-
+          <div style={{ marginTop: 30, marginBottom: 30 }}>
           <Grid.Row>
-            <Header textAlign="left" size="large">More Page...</Header>
+            <Header textAlign="left" size="large" color='yellow'>More Page...</Header>
           </Grid.Row>
-
+          </div>
           <Grid.Row>
             <Grid.Column>
-              <Icon name='user' size='large'/>
+              <Icon name='user' size='large' color='yellow'/>
             </Grid.Column>
             <Grid.Column>
-              <Header textAlign='left' size='large'>Profile</Header>
+              <Header textAlign='left' size='large' color='yellow'>Profile</Header>
             </Grid.Column>
           </Grid.Row>
 
@@ -30,13 +31,13 @@ class More extends React.Component {
 
           <Grid.Row>
             <Grid.Column>
-              <Icon name='building' size='large'/>
+              <Icon name='building' size='large' color='yellow'/>
             </Grid.Column>
             <Grid.Column width={10}>
-              <Header>Campus Settings</Header>
+              <Header color='yellow'>Campus Settings</Header>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Icon size="big" name="angle right"/>
+              <Icon size="big" name="angle right" color='yellow'/>
             </Grid.Column>
           </Grid.Row>
 
@@ -44,13 +45,13 @@ class More extends React.Component {
 
           <Grid.Row>
             <Grid.Column>
-              <Icon name='bell' size='large'/>
+              <Icon name='bell' size='large' color='yellow'/>
             </Grid.Column>
             <Grid.Column width={10}>
-              <Header>Notification Settings</Header>
+              <Header color='yellow'>Notification Settings</Header>
             </Grid.Column>
             <Grid.Column width={2}>
-              <Icon size="big" name="angle right"/>
+              <Icon size="big" name="angle right" color='yellow'/>
             </Grid.Column>
           </Grid.Row>
 
@@ -58,13 +59,13 @@ class More extends React.Component {
 
           <Grid.Row>
             <Grid.Column>
-              <Icon name='users' size='large'/>
+              <Icon name='users' size='large' color='yellow'/>
             </Grid.Column>
             <Grid.Column width={10}>
-              <Header>Affiliation Status</Header>
+              <Header color='yellow'>   Affiliation Status</Header>
             </Grid.Column>
             <Grid.Column width={2}>
-              <Icon size="big" name="angle right"/>
+              <Icon size="big" name="angle right" color='yellow'/>
             </Grid.Column>
           </Grid.Row>
 
@@ -72,13 +73,13 @@ class More extends React.Component {
 
           <Grid.Row>
             <Grid.Column>
-              <Icon name='home' size='large'/>
+              <Icon name='home' size='large' color='yellow'/>
             </Grid.Column>
             <Grid.Column width={10}>
-              <Header>Housing Status</Header>
+              <Header color='yellow'>Housing Status</Header>
             </Grid.Column>
             <Grid.Column width={2}>
-              <Icon size="big" name="angle right"/>
+              <Icon size="big" name="angle right" color='yellow'/>
             </Grid.Column>
           </Grid.Row>
 
@@ -86,17 +87,18 @@ class More extends React.Component {
 
           <Grid.Row>
             <Grid.Column>
-              <Icon name='wifi' size='large'/>
+              <Icon name='wifi' size='large' color='yellow'/>
             </Grid.Column>
             <Grid.Column width={10}>
-              <Header>Online studying/working status</Header>
+              <Header color='yellow'>Online studying/working status</Header>
             </Grid.Column>
             <Grid.Column width={2}>
-              <Icon size="big" name="angle right"/>
+              <Icon size="big" name="angle right" color='yellow'/>
             </Grid.Column>
           </Grid.Row>
 
       </Grid>
+      </div>
     );
   }
 }

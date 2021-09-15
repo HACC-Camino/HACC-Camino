@@ -5,7 +5,7 @@ import SignInModal from '../components/landing/SignInModal';
 import SignUpModal from '../components/landing/SignUpModal';
 
 const textStyle = { paddingTop: 50 };
-const padding = { paddingTop: 160 };
+const padding = { paddingTop: 130 };
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
