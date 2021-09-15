@@ -4,6 +4,9 @@
    color: #FFD60A;
     padding-top: 80px;
 }
+.landing-text {
+  font-size: 4rem;
+}
 .ui.yellow.button {
     font-family: 'Saira Semi Condensed', sans-serif;
 }

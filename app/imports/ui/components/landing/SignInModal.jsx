@@ -11,7 +11,7 @@ const SignInModal = () => {
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
           open={open}
-          trigger={<Button color='yellow'>Sign In</Button>}
+          trigger={<Button size='large' color='yellow'>Sign In</Button>}
           closeIcon
       >
         <Modal.Content>
