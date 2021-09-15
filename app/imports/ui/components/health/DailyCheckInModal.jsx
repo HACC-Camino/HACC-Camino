@@ -51,49 +51,49 @@ const DailyCheckInModal = () => {
     <Modal.Content>
       <List>
         <List.Item>
-          - Have you tested positive for COVID-19 and are on home isolation?
+          <h4>- Have you tested positive for COVID-19 and are on home isolation?</h4>
         </List.Item>
         <List.Item>
-          - Check for Symptoms of Illness:
+          <h4>- Check for Symptoms of Illness:
           If you have any symptoms of illness, do not come to campus or the workplace.
           Do you currently have any of the following symptoms
-          that are new, worsening, and not attributable to a pre-existing condition?
+          that are new, worsening, and not attributable to a pre-existing condition?</h4>
         </List.Item>
         <List.Item>
           <List bulleted>
-            <List.Item>Fever greater than 100.4 °F or feeling feverish (chills, sweating)</List.Item>
-            <List.Item>Cough</List.Item>
-            <List.Item>Shortness of breath/difficulty breathing</List.Item>
-            <List.Item>Sore throat</List.Item>
-            <List.Item>Unexplained muscle/body aches</List.Item>
-            <List.Item>Nausea/vomiting or diarrhea</List.Item>
-            <List.Item>Loss of senses of taste or smell</List.Item>
-            <List.Item>Runny or congested nose</List.Item>
-            <List.Item>Headache</List.Item>
-            <List.Item>Skin rash</List.Item>
-            <List.Item>Chest pain or pressure</List.Item>
+            <List.Item><h4>Fever greater than 100.4 °F or feeling feverish (chills, sweating)</h4></List.Item>
+            <List.Item><h4>Cough</h4></List.Item>
+            <List.Item><h4>Shortness of breath/difficulty breathing</h4></List.Item>
+            <List.Item><h4>Sore throat</h4></List.Item>
+            <List.Item><h4>Unexplained muscle/body aches</h4></List.Item>
+            <List.Item><h4>Nausea/vomiting or diarrhea</h4></List.Item>
+            <List.Item><h4>Loss of senses of taste or smell</h4></List.Item>
+            <List.Item><h4>Runny or congested nose</h4></List.Item>
+            <List.Item><h4>Headache</h4></List.Item>
+            <List.Item><h4>Skin rash</h4></List.Item>
+            <List.Item><h4>Chest pain or pressure</h4></List.Item>
           </List>
         </List.Item>
         <List.Item>
-          - Check for Recent COVID-19 Exposure:
+          <h4>- Check for Recent COVID-19 Exposure:</h4>
         </List.Item>
         <List.Item>
           <List bulleted>
             <List.Item>
-              Have you traveled out of the state and are currently under quarantine
-              orders by the Department of Health or your medical care provider ?
+              <h4>Have you traveled out of the state and are currently under quarantine
+                orders by the Department of Health or your medical care provider ?</h4>
             </List.Item>
             <List.Item>
-              Are you unvaccinated and have been in close contact
-              (less than 6 feet for greater than or equal to 15 minutes, cumulatively,
-              over a 24-hour period) with anyone who has an active, diagnosed case of COVID-19?
-              Note: Healthcare students/personnel wearing appropriate PPE at ALL TIMES
-              while caring for a patient with COVID-19 would NOT be
-              considered a close contact (ref. DOH medical advisory #16)
+              <h4>Are you unvaccinated and have been in close contact
+                (less than 6 feet for greater than or equal to 15 minutes, cumulatively,
+                over a 24-hour period) with anyone who has an active, diagnosed case of COVID-19?
+                Note: Healthcare students/personnel wearing appropriate PPE at ALL TIMES
+                while caring for a patient with COVID-19 would NOT be
+                considered a close contact (ref. DOH medical advisory #16)</h4>
             </List.Item>
             <List.Item>
-              Has the Department of Health told you that
-              you have been in contact with a person with COVID-19 AND you are UNvaccinated?
+              <h4>Has the Department of Health told you that
+                you have been in contact with a person with COVID-19 AND you are UNvaccinated?</h4>
             </List.Item>
           </List>
         </List.Item>

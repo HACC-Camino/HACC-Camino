@@ -47,19 +47,21 @@ const COVIDStatusModal = ({ healthStatus, vaccineData }) => {
                         subheader={(new Date()).toLocaleString()}
                     />
                     <br/>
-                    <List horizontal>
+
+                    <List>
                       <List.Item>
-                        <List.Header>Vaccination</List.Header>
+                        {/*<List.Header >Vaccination</List.Header>*/}
+                        <Header as={'h3'}>Vaccination</Header>
                         {vaccineStatus}
                       </List.Item>
                       <List.Item>
-                        <List.Header>Health Symptom</List.Header>
+                        <List.Header as={'h3'}>Health Symptom</List.Header>
                         {healthStatus.clear ? 'Clear' : 'Not Clear'}
                       </List.Item>
                     </List>
                     <Divider/>
-                    View Details
-                    <Icon name={'angle right'} link/>
+                    <h5>View Details
+                    <Icon name={'angle right'} link/></h5>
                   </Message.Content>
                 </Message>
               }

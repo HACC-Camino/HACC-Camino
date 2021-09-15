@@ -13,12 +13,16 @@ const CheckInCard = () => (
 
         <List>
           <List.Item>
+            <h5>
             <Label circular content={'1'}/>
             {'\tCheck your symptoms.'}
+            </h5>
           </List.Item>
           <List.Item>
+            <h5>
             <Label circular content={'2'}/>
             {'\tKeep track of your symptoms every day.'}
+            </h5>
           </List.Item>
         </List>
 
