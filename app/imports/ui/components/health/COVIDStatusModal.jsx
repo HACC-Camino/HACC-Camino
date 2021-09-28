@@ -50,7 +50,7 @@ const COVIDStatusModal = ({ healthStatus, vaccineData }) => {
 
                     <List>
                       <List.Item>
-                        {/*<List.Header >Vaccination</List.Header>*/}
+                        {/* <List.Header >Vaccination</List.Header> */}
                         <Header as={'h3'}>Vaccination</Header>
                         {vaccineStatus}
                       </List.Item>
