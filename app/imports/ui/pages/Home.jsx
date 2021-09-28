@@ -44,7 +44,7 @@ const Home = (
           </Grid>
         </div>
       ) :
-      <Loader active>Getting Trip Data</Loader>
+      <Loader active>Getting User Data</Loader>
 );
 
 Home.propTypes = {
