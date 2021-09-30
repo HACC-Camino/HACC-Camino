@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion, Card, Menu } from 'semantic-ui-react';
+import { Accordion, Card, Header, Menu } from 'semantic-ui-react';
 
 const ResourcesCard = () => {
   const panels = [
@@ -46,19 +46,18 @@ const ResourcesCard = () => {
   ];
 
   return (
-      <Card
-          fluid
-          header={'Resources'}
-          description={
-            <Accordion
+      <Card fluid>
+        <Card.Content>
+          <Header as={'h3'} content={'Resources'}/>
+          <Accordion
               as={Menu}
               panels={panels}
               vertical
               secondary
               fluid
-            />
-          }
-      />
+          />
+        </Card.Content>
+      </Card>
   );
 };
 

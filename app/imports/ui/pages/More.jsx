@@ -15,7 +15,7 @@ class More extends React.Component {
       <Grid container>
           <div style={{ marginTop: 30, marginBottom: 30 }}>
           <Grid.Row>
-            <Header textAlign="left" size="large" color='yellow'>More Page...</Header>
+            <Header textAlign="left" as="h1" color='yellow'>More Page</Header>
           </Grid.Row>
           </div>
           <Grid.Row>

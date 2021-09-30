@@ -44,11 +44,11 @@ const DailyCheckInModal = () => {
          open={modalOpen}
          onClose={handleModalClose}
          onOpen={handleModalOpen}
-         trigger={<Button>Complete Daily Check-in</Button>}
+         trigger={<Button className="ui form button">Complete Daily Check-in</Button>}
          style = {{ fontSize: '17px' }}
   >
     <Modal.Header>Do any of the following apply to you?</Modal.Header>
-    <Modal.Content>
+    <Modal.Content scrolling>
       <List>
         <List.Item>
           <h4>- Have you tested positive for COVID-19 and are on home isolation?</h4>
@@ -103,7 +103,7 @@ const DailyCheckInModal = () => {
       <HandleSymptomsForm/>
     </Modal.Content>
     <Modal.Actions>
-      <button className="ui button" onClick={handleSubmit}>Submit</button>
+      <button className="ui form button" onClick={handleSubmit}>Submit</button>
     </Modal.Actions>
   </Modal>
   );

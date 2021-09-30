@@ -13,7 +13,7 @@ const SignUpModal = () => {
           trigger={<Button color='yellow'>Sign Up</Button>}
           closeIcon
       >
-        <Modal.Content>
+        <Modal.Content scrolling>
           <Header>Sign Up</Header>
         </Modal.Content>
         <SignUpForm/>

@@ -14,7 +14,7 @@ const SignInModal = () => {
           trigger={<Button color='yellow'>Sign In</Button>}
           closeIcon
       >
-        <Modal.Content>
+        <Modal.Content scrolling>
           <Header>Sign In</Header>
         </Modal.Content>
         <SignInForm/>

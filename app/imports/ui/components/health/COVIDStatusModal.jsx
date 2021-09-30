@@ -31,55 +31,50 @@ const COVIDStatusModal = ({ healthStatus, vaccineData }) => {
               {covidStatus.content}
             </Message.Content>
           </Message> :
-          <Modal
-              size='small'
-              closeIcon
-              open={modalOpen}
-              onClose={handleModalClose}
-              onOpen={handleModalOpen}
-              trigger={
-                <Message icon>
-                  <Icon name={covidStatus.icon}/>
-                  <Message.Content>
-                    <Header
-                        as={'h3'}
-                        content={covidStatus.header}
-                        subheader={(new Date()).toLocaleString()}
-                    />
-                    <br/>
+          <Message icon>
+            <Icon name={covidStatus.icon} style={{ color: '#001D3D' }}/>
+            <Message.Content>
+              <Header
+                  as={'h3'}
+                  content={covidStatus.header}
+                  subheader={(new Date()).toLocaleString()}
+              />
+              <br/>
 
-                    <List>
-                      <List.Item>
-                        {/* <List.Header >Vaccination</List.Header> */}
-                        <Header as={'h3'}>Vaccination</Header>
-                        {vaccineStatus}
-                      </List.Item>
-                      <List.Item>
-                        <List.Header as={'h3'}>Health Symptom</List.Header>
-                        {healthStatus.clear ? 'Clear' : 'Not Clear'}
-                      </List.Item>
-                    </List>
-                    <Divider/>
-                    <h5>View Details
-                    <Icon name={'angle right'} link/></h5>
-                  </Message.Content>
-                </Message>
-              }
-          >
-            <Message.Header
-                as={'h1'}
-                content={`COVID STATUS ON ${healthStatus.date.toLocaleString()}`}
-            />
-            <COVIDStatusModalContent
-                header={covidStatus.healthPageHeader}
-                healthStatus={healthStatus}
-                vaccineStatus={vaccineStatus}
-            />
-            <Modal.Actions>
-              <Button onClick={() => handleModalClose()} content={'Close'}/>
-            </Modal.Actions>
-          </Modal>
-
+              <List horizontal>
+                <List.Item>
+                  <List.Header as={'h3'}>Vaccination</List.Header>
+                  {vaccineStatus}
+                </List.Item>
+                <List.Item>
+                  <List.Header as={'h3'}>Health Symptom</List.Header>
+                  {healthStatus.clear ? 'Clear' : 'Not Clear'}
+                </List.Item>
+              </List>
+              <Divider/>
+              <Modal
+                  size='small'
+                  closeIcon
+                  open={modalOpen}
+                  onClose={handleModalClose}
+                  onOpen={handleModalOpen}
+                  trigger={<p>View Details<Icon name={'angle right'} link/></p>}
+              >
+                <Message.Header
+                    as={'h1'}
+                    content={`COVID STATUS ON ${healthStatus.date.toLocaleString()}`}
+                />
+                <COVIDStatusModalContent
+                    header={covidStatus.healthPageHeader}
+                    healthStatus={healthStatus}
+                    vaccineStatus={vaccineStatus}
+                />
+                <Modal.Actions>
+                  <Button onClick={() => handleModalClose()} content={'Close'}/>
+                </Modal.Actions>
+              </Modal>
+            </Message.Content>
+          </Message>
   );
 };
 

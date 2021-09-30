@@ -14,13 +14,13 @@ const CheckInCard = () => (
         <List>
           <List.Item>
             <h5>
-            <Label circular content={'1'}/>
+            <Label circular content={'1'} style={{ backgroundColor: '#FFD60A', color: '#001D3D' }}/>
             {'\tCheck your symptoms.'}
             </h5>
           </List.Item>
           <List.Item>
             <h5>
-            <Label circular content={'2'}/>
+            <Label circular content={'2'} style={{ backgroundColor: '#FFD60A', color: '#001D3D' }}/>
             {'\tKeep track of your symptoms every day.'}
             </h5>
           </List.Item>

@@ -23,7 +23,7 @@ const Home = (
           <Grid container stackable>
             <Grid.Row>
               <Grid.Column>
-                <Header as={'h2'} content={'On-Campus Check-in'} color='yellow'/>
+                <Header as={'h1'} content={'On-Campus Check-in'} color='yellow'/>
               </Grid.Column>
             </Grid.Row>
 

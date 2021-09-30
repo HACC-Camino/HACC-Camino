@@ -4,9 +4,23 @@
    color: #FFD60A;
     padding-top: 80px;
 }
+
+.ui.form.button {
+  background-color: #001D3D;
+  color: white;
+  font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+.ui.form.button:hover {
+  background-color: #1678c2;
+  color: white;
+  font-family: 'Saira Semi Condensed', sans-serif;
+}
+
 .ui.yellow.button {
     font-family: 'Saira Semi Condensed', sans-serif;
 }
+
 .login-modal {
     /* font-family: 'Saira Semi Condensed', sans-serif; */
     color: #FFD60A;
@@ -15,8 +29,14 @@
 }
 /* Font Family Import */
 h1,
-h2,
-h3,
+h2 {
+  font-family: 'Saira Condensed', sans-serif !important;
+}
+
+h3 {
+  font-family: 'Saira Semi Condensed', sans-serif !important;
+  font-weight: bold;
+}
 h4,
 h5,
 h6,

@@ -50,14 +50,14 @@ const AddVaccineDataModal = () => {
          open={modalOpen}
          onClose={handleModalClose}
          onOpen={handleModalOpen}
-         trigger={<Button>Add Vaccine Data</Button>}
+         trigger={<Button className="ui form button">Add Vaccine Data</Button>}
          as={AutoForm}
          schema={bridge}
          onSubmit={data => handleSubmit(data)}
          style = {{ fontSize: '13px' }}
   >
     <Modal.Header>Add Vaccine Data</Modal.Header>
-    <Modal.Content>
+    <Modal.Content scrolling>
       <SelectField id='vaccineName' name='vaccineName' showInlineError={true} placeholder={'Vaccine'}/>
       <Header as='h3' dividing>First Dose</Header>
       <Form.Group widths={'equal'}>
@@ -79,7 +79,7 @@ const AddVaccineDataModal = () => {
       />
     </Modal.Content>
     <Modal.Actions>
-      <SubmitField value='Submit' />
+      <SubmitField className="ui form button" value='Submit' />
     </Modal.Actions>
   </Modal>
   );
