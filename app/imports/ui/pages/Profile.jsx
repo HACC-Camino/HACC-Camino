@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { NavLink, withRouter } from 'react-router-dom';
-import { Divider, Grid, Header, Icon, Menu } from 'semantic-ui-react';
+import { Divider, Grid, Header, Icon } from 'semantic-ui-react';
 
 // campus settings
 // notification settings
