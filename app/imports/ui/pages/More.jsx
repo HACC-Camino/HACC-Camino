@@ -15,26 +15,18 @@ class More extends React.Component {
       <Grid container>
           <div style={{ marginTop: 30, marginBottom: 30 }}>
           <Grid.Row>
-            <Header textAlign="left" as="h1" color='yellow'>More Page</Header>
+            <Header textAlign="left" as="h1" color='yellow'>
+              <Icon name='user' size='large' color='yellow'/>My Profile</Header>
           </Grid.Row>
           </div>
-          <Grid.Row>
-            <Grid.Column>
-              <Icon name='user' size='large' color='yellow'/>
-            </Grid.Column>
-            <Grid.Column>
-              <Header textAlign='left' size='large' color='yellow'>Profile</Header>
-            </Grid.Column>
-          </Grid.Row>
-
         <Divider/>
 
           <Grid.Row>
             <Grid.Column>
-              <Icon name='building' size='large' color='yellow'/>
+              <Icon name='heart' size='large' color='yellow'/>
             </Grid.Column>
             <Grid.Column width={10}>
-              <Header color='yellow'>Campus Settings</Header>
+              <Header color='yellow'>My Health Page</Header>
             </Grid.Column>
             <Grid.Column width={3}>
               <Icon size="big" name="angle right" color='yellow'/>
@@ -45,10 +37,10 @@ class More extends React.Component {
 
           <Grid.Row>
             <Grid.Column>
-              <Icon name='bell' size='large' color='yellow'/>
+              <Icon name='calendar check' size='large' color='yellow'/>
             </Grid.Column>
             <Grid.Column width={10}>
-              <Header color='yellow'>Notification Settings</Header>
+              <Header color='yellow'>Check In</Header>
             </Grid.Column>
             <Grid.Column width={2}>
               <Icon size="big" name="angle right" color='yellow'/>
@@ -59,10 +51,10 @@ class More extends React.Component {
 
           <Grid.Row>
             <Grid.Column>
-              <Icon name='users' size='large' color='yellow'/>
+              <Icon name='history' size='large' color='yellow'/>
             </Grid.Column>
             <Grid.Column width={10}>
-              <Header color='yellow'>   Affiliation Status</Header>
+              <Header color='yellow'>My History</Header>
             </Grid.Column>
             <Grid.Column width={2}>
               <Icon size="big" name="angle right" color='yellow'/>
@@ -70,27 +62,12 @@ class More extends React.Component {
           </Grid.Row>
 
           <Divider/>
-
           <Grid.Row>
             <Grid.Column>
-              <Icon name='home' size='large' color='yellow'/>
+              <Icon name='add' size='large' color='yellow'/>
             </Grid.Column>
             <Grid.Column width={10}>
-              <Header color='yellow'>Housing Status</Header>
-            </Grid.Column>
-            <Grid.Column width={2}>
-              <Icon size="big" name="angle right" color='yellow'/>
-            </Grid.Column>
-          </Grid.Row>
-
-          <Divider/>
-
-          <Grid.Row>
-            <Grid.Column>
-              <Icon name='wifi' size='large' color='yellow'/>
-            </Grid.Column>
-            <Grid.Column width={10}>
-              <Header color='yellow'>Online studying/working status</Header>
+              <Header color='yellow'>Add Vaccine Data</Header>
             </Grid.Column>
             <Grid.Column width={2}>
               <Icon size="big" name="angle right" color='yellow'/>
