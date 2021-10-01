@@ -1,4 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
+import { withRouter, NavLink } from 'react-router-dom';
 import { Divider, Grid, Header, Icon } from 'semantic-ui-react';
 
 // campus settings
@@ -8,7 +12,7 @@ import { Divider, Grid, Header, Icon } from 'semantic-ui-react';
 // online studying/working status
 const padding = { paddingTop: 20, marginLeft: 35 };
 
-class More extends React.Component {
+class Profile extends React.Component {
   render() {
     return (
       <div style={padding}>
@@ -79,5 +83,14 @@ class More extends React.Component {
     );
   }
 }
+/** Declare the types of all properties. */
+Profile.propTypes = {
+  currentUser: PropTypes.string,
+};
 
-export default More;
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+const ProfileLink = withTracker(() => ({
+  currentUser: Meteor.user() ? Meteor.user().username : '',
+}))(Profile);
+
+export default withRouter(ProfileLink);

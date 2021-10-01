@@ -14,7 +14,7 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import Home from '../pages/Home';
-import More from '../pages/More';
+import Profile from '../pages/Profile';
 import Health from '../pages/Health';
 import SideNavBar from '../components/SideNavBar';
 
@@ -31,7 +31,7 @@ class App extends React.Component {
               <Route path="/signup" component={Signup}/>
               <ProtectedRoute path="/home" component={Home}/>
               <ProtectedRoute path="/health" component={Health}/>
-              <ProtectedRoute path="/more" component={More}/>
+              <ProtectedRoute path="/profile" component={Profile}/>
               <ProtectedRoute path="/list" component={ListStuff}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
