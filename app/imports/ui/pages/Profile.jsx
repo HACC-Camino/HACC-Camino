@@ -20,8 +20,7 @@ class Profile extends React.Component {
           <div style={{ marginTop: 30, marginBottom: 30 }}>
           <Grid.Row>
             <Header textAlign="left" as="h1" color='yellow'>
-              <Icon name='user' size='large' color='yellow'/>My Profile</Header>
-              {this.props.currentUser}
+              Profile: {this.props.currentUser}</Header>
           </Grid.Row>
           </div>
         <Divider/>
