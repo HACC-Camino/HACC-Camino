@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { withRouter } from 'react-router-dom';
-import { Divider, Grid, Header, Icon } from 'semantic-ui-react';
+import { NavLink, withRouter } from 'react-router-dom';
+import { Divider, Grid, Header, Icon, Menu } from 'semantic-ui-react';
 
 // campus settings
 // notification settings
@@ -26,11 +26,12 @@ class Profile extends React.Component {
           </div>
         <Divider/>
 
-          <Grid.Row>
+          <Grid.Row id="'user'"
+                    as={NavLink} exact to="/health" onClick={this.handleShowClick}>
             <Grid.Column>
               <Icon name='heart' size='large' color='yellow'/>
             </Grid.Column>
-            <Grid.Column width={10}>
+            <Grid.Column width={10} >
               <Header color='yellow'>My Health Page</Header>
             </Grid.Column>
             <Grid.Column width={3}>
@@ -40,21 +41,10 @@ class Profile extends React.Component {
 
           <Divider/>
 
-          <Grid.Row>
-            <Grid.Column>
-              <Icon name='calendar check' size='large' color='yellow'/>
-            </Grid.Column>
-            <Grid.Column width={10}>
-              <Header color='yellow'>Check In</Header>
-            </Grid.Column>
-            <Grid.Column width={2}>
-              <Icon size="big" name="angle right" color='yellow'/>
-            </Grid.Column>
-          </Grid.Row>
-
           <Divider/>
 
-          <Grid.Row>
+          <Grid.Row id="'user'"
+                     as={NavLink} exact to="/health" onClick={this.handleShowClick}>
             <Grid.Column>
               <Icon name='history' size='large' color='yellow'/>
             </Grid.Column>
