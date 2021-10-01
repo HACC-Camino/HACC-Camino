@@ -72,7 +72,7 @@ class SideNavBar extends React.Component {
               </IconGroup>
             </Menu.Item>
             <Menu.Item style={{ floated: 'left', width: '100%' }} id="'user'"
-                       as={NavLink} exact to="/profile" onClick={this.handleShowClick}>
+                       as={NavLink} exact to="/health" onClick={this.handleShowClick}>
               <IconGroup>
                 <Icon name='heart'/>
                 Health
