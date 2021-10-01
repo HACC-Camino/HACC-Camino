@@ -84,7 +84,7 @@ function SignOutConfirmation() {
                 })
                 }
                 positive
-                as={NavLink} exact to="/signout">
+                as={NavLink} exact to="/">
               Yes
             </Button>
           </Modal.Actions>
