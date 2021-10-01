@@ -26,12 +26,12 @@ class Profile extends React.Component {
         <Divider/>
 
           <Grid.Row id="'user'"
-                    as={NavLink} exact to="/health" onClick={this.handleShowClick}>
+                    as={NavLink} exact to="/home" onClick={this.handleShowClick}>
             <Grid.Column>
               <Icon name='heart' size='large' color='yellow'/>
             </Grid.Column>
             <Grid.Column width={10} >
-              <Header color='yellow'>My Health Page</Header>
+              <Header color='yellow'>My Dashboard</Header>
             </Grid.Column>
             <Grid.Column width={3}>
               <Icon size="big" name="angle right" color='yellow'/>
