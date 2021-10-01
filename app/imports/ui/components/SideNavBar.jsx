@@ -79,7 +79,7 @@ class SideNavBar extends React.Component {
               </IconGroup>
             </Menu.Item>
             <Menu.Item style={{ width: '100%' }} id="navbar-Prereq"
-                       as={NavLink} exact to="/more" onClick={this.handleShowClick}>
+                       as={NavLink} exact to="/profile" onClick={this.handleShowClick}>
               <IconGroup>
                 <Icon name='pencil square'/>
                 More
