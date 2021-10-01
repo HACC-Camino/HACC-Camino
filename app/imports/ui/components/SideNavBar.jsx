@@ -86,7 +86,7 @@ class SideNavBar extends React.Component {
               </IconGroup>
             </Menu.Item>
             <SignOutConfirmation id="navbar-sign-out" as={NavLink}
-                                 exact to="/signout" style={{ padding: 0, margin: 0 }}/>
+                                 exact to="/" style={{ padding: 0, margin: 0 }}/>
           </Sidebar>
         </div>
     );
