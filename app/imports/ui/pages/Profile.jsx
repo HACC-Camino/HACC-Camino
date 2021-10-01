@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { withRouter, NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { Divider, Grid, Header, Icon } from 'semantic-ui-react';
 
 // campus settings
@@ -21,6 +21,7 @@ class Profile extends React.Component {
           <Grid.Row>
             <Header textAlign="left" as="h1" color='yellow'>
               <Icon name='user' size='large' color='yellow'/>My Profile</Header>
+              {this.props.currentUser}
           </Grid.Row>
           </div>
         <Divider/>
