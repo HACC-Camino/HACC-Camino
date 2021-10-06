@@ -77,6 +77,8 @@ const AddVaccineDataModal = () => {
       <DateField name='sDoseDate'
                  max={new Date()}
       />
+      <Header as='h3' dividing>Upload Vaccine</Header>
+      {/* Add 'upload vaccine card code here */}
     </Modal.Content>
     <Modal.Actions>
       <SubmitField className="ui form button" value='Submit' />

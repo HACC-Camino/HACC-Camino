@@ -7,7 +7,7 @@ import { VaccineDatas } from '../../api/vaccine/VaccineDataCollection';
 import ResourcesCard from '../components/home/ResourcesCard';
 import CheckInCard from '../components/home/CheckInCard';
 import VaccinationCard from '../components/home/VaccinationCard';
-import COVIDStatusModal from '../components/health/COVIDStatusModal';
+import COVIDStatusCard from '../components/health/COVIDStatusCard';
 import { HealthStatuses } from '../../api/health-status/HealthStatusCollection';
 
 const padding = { paddingTop: 30, marginLeft: 35 };
@@ -16,6 +16,7 @@ const Home = (
     {
       ready,
       todayHealthStatus,
+      allHealthStatus,
       vaccineData,
     },
 ) => (ready ? (
@@ -29,9 +30,10 @@ const Home = (
 
             <Grid.Row columns={2}>
               <Grid.Column computer={10}>
-                <COVIDStatusModal
+                <COVIDStatusCard
                     healthStatus={todayHealthStatus}
                     vaccineData={vaccineData}
+                    page={'home'}
                 />
                 <CheckInCard/>
               </Grid.Column>
@@ -39,6 +41,17 @@ const Home = (
               <Grid.Column computer={6}>
                 <VaccinationCard vaccineData={vaccineData}/>
                 <ResourcesCard/>
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row>
+              <Grid.Column>
+                {allHealthStatus.map((healthStatus) => <COVIDStatusCard
+                  key={healthStatus._id}
+                  healthStatus={healthStatus}
+                  vaccineData={vaccineData}
+                  page={'health'}
+                />)}
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -50,6 +63,7 @@ const Home = (
 Home.propTypes = {
   ready: PropTypes.bool.isRequired,
   todayHealthStatus: PropTypes.object,
+  allHealthStatus: PropTypes.array.isRequired,
   vaccineData: PropTypes.array.isRequired,
 };
 
@@ -59,10 +73,12 @@ export default withTracker(() => {
        && VaccineDatas.subscribeVaccine().ready()
        && username !== undefined;
   const todayHealthStatus = HealthStatuses.getTodayHealthStatus(username);
+  const allHealthStatus = HealthStatuses.getHealthStatusesSortedDate(username);
   const vaccineData = VaccineDatas.getUserVaccineData(username);
   return {
     ready,
     todayHealthStatus,
+    allHealthStatus,
     vaccineData,
   };
 })(Home);

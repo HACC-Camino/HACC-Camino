@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Grid, Header, List } from 'semantic-ui-react';
+import { Button, Card, Grid, Header, List } from 'semantic-ui-react';
 import AddVaccineDataModal from '../vaccine/AddVaccineDataModal';
 
 const VaccinationCard = ({ vaccineData }) => (
@@ -11,7 +11,7 @@ const VaccinationCard = ({ vaccineData }) => (
               content={'Vaccination Card'}
               subheader={
                 vaccineData.length ?
-                    'Verified' :
+                    'Uploaded' :
                     'You may upload your COVID Vaccination information here for convenience.'
               }
           />
@@ -21,17 +21,16 @@ const VaccinationCard = ({ vaccineData }) => (
                   <List.Header>1st Dose COVID-19</List.Header>
                   <List.Description>{vaccineData[0].vaccineName} ({vaccineData[0].fDoseLotNum})</List.Description>
                   <List.Description>
-                    {vaccineData[0].fDoseDate.toLocaleDateString()}
-                    @
-                    {vaccineData[0].fDoseSite}</List.Description>
+                    {`${vaccineData[0].fDoseDate.toLocaleDateString()} @ 
+                    ${vaccineData[0].fDoseSite}`}
+                  </List.Description>
                 </List.Item>
                 <List.Item>
                   <List.Header>2nd Dose COVID-19</List.Header>
                   <List.Description>{vaccineData[0].vaccineName} ({vaccineData[0].sDoseLotNum})</List.Description>
                   <List.Description>
-                    {vaccineData[0].sDoseDate.toLocaleDateString()}
-                    @
-                    {vaccineData[0].sDoseSite}
+                    {`${vaccineData[0].sDoseDate.toLocaleDateString()} @ 
+                    ${vaccineData[0].sDoseSite}`}
                   </List.Description>
                 </List.Item>
               </List> : null
@@ -39,7 +38,10 @@ const VaccinationCard = ({ vaccineData }) => (
           <Grid.Column textAlign={'center'}>
                 {
                   vaccineData.length ?
-                      'See Vaccination Card' :
+                      <Button
+                        className="ui form button"
+                        content={'See Vaccination Card'}
+                      /> :
                   <AddVaccineDataModal/>
                 }
           </Grid.Column>

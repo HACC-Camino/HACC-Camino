@@ -1,17 +1,22 @@
 import React from 'react';
-import { Divider, Grid, Header, List, Modal } from 'semantic-ui-react';
+import { Divider, Grid, Header, Icon, List, Modal } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import Disclaimer from '../Disclaimer';
 
-const COVIDStatusModalContent = ({ header, healthStatus, vaccineStatus }) => (
+const COVIDStatusModalContent = ({ covidStatus, healthStatus, vaccineStatus }) => (
       <Modal.Content scrolling>
         <Grid stackable>
           <Grid.Row columns={2}>
-            <Grid.Column computer={9}>
-              <Header as={'h2'} content={header}/>
+            <Grid.Column computer={10}>
+              <Header as={'h3'} size={'large'} style={{ color: covidStatus.iconColor }}>
+                <Icon
+                  name={covidStatus.icon}
+                />
+                <Header.Content>{covidStatus.healthPageHeader}</Header.Content>
+              </Header>
             </Grid.Column>
-            <Grid.Column computer={6}>
-              <List size={'huge'}>
+            <Grid.Column computer={5} verticalAlign={'middle'}>
+              <List size={'big'}>
                 <List.Item>
                   <List.Header>Vaccination</List.Header>
                   {vaccineStatus}
@@ -30,7 +35,7 @@ const COVIDStatusModalContent = ({ header, healthStatus, vaccineStatus }) => (
   );
 
 COVIDStatusModalContent.propTypes = {
-  header: PropTypes.string.isRequired,
+  covidStatus: PropTypes.object.isRequired,
   healthStatus: PropTypes.object.isRequired,
   vaccineStatus: PropTypes.string.isRequired,
 };
