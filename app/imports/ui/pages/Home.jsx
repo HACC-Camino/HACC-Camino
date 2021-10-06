@@ -4,10 +4,10 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Grid, Header, Loader } from 'semantic-ui-react';
 import { VaccineDatas } from '../../api/vaccine/VaccineDataCollection';
-import ResourcesCard from '../components/home/ResourcesCard';
-import CheckInCard from '../components/home/CheckInCard';
-import VaccinationCard from '../components/home/VaccinationCard';
-import COVIDStatusCard from '../components/health/COVIDStatusCard';
+import ResourcesCard from '../components/other/ResourcesCard';
+import CheckInCard from '../components/other/CheckInCard';
+import VaccinationCard from '../components/vaccine/VaccinationCard';
+import COVIDStatusCard from '../components/covid-status/COVIDStatusCard';
 import { HealthStatuses } from '../../api/health-status/HealthStatusCollection';
 
 const padding = { paddingTop: 30, marginLeft: 35 };

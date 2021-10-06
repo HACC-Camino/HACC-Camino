@@ -4,8 +4,8 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Grid, Header, Loader } from 'semantic-ui-react';
 import { VaccineDatas } from '../../api/vaccine/VaccineDataCollection';
-import VaccinationCard from '../components/home/VaccinationCard';
-import HistoryCard from '../components/more/HistoryCard';
+import VaccinationCard from '../components/vaccine/VaccinationCard';
+import HistoryCard from '../components/covid-status/HistoryCard';
 import { HealthStatuses } from '../../api/health-status/HealthStatusCollection';
 
 const padding = { paddingTop: 30, marginLeft: 35 };

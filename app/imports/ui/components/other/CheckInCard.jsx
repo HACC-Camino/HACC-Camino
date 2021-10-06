@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Grid, Header, Label, List } from 'semantic-ui-react';
-import DailyCheckInModal from '../health/DailyCheckInModal';
+import DailyCheckInModal from '../covid-status/DailyCheckInModal';
 
 const CheckInCard = () => (
     <Card fluid>

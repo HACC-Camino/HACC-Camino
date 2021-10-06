@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card, Grid, Header, List } from 'semantic-ui-react';
-import AddVaccineDataModal from '../vaccine/AddVaccineDataModal';
+import AddVaccineDataModal from './AddVaccineDataModal';
 
 const VaccinationCard = ({ vaccineData }) => (
       <Card fluid>
