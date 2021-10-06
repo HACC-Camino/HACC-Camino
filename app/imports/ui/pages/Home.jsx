@@ -16,7 +16,6 @@ const Home = (
     {
       ready,
       todayHealthStatus,
-      allHealthStatus,
       vaccineData,
     },
 ) => (ready ? (
@@ -43,17 +42,6 @@ const Home = (
                 <ResourcesCard/>
               </Grid.Column>
             </Grid.Row>
-
-            <Grid.Row>
-              <Grid.Column>
-                {allHealthStatus.map((healthStatus) => <COVIDStatusCard
-                  key={healthStatus._id}
-                  healthStatus={healthStatus}
-                  vaccineData={vaccineData}
-                  page={'health'}
-                />)}
-              </Grid.Column>
-            </Grid.Row>
           </Grid>
         </div>
       ) :
@@ -63,7 +51,6 @@ const Home = (
 Home.propTypes = {
   ready: PropTypes.bool.isRequired,
   todayHealthStatus: PropTypes.object,
-  allHealthStatus: PropTypes.array.isRequired,
   vaccineData: PropTypes.array.isRequired,
 };
 
@@ -73,12 +60,10 @@ export default withTracker(() => {
        && VaccineDatas.subscribeVaccine().ready()
        && username !== undefined;
   const todayHealthStatus = HealthStatuses.getTodayHealthStatus(username);
-  const allHealthStatus = HealthStatuses.getHealthStatusesSortedDate(username);
   const vaccineData = VaccineDatas.getUserVaccineData(username);
   return {
     ready,
     todayHealthStatus,
-    allHealthStatus,
     vaccineData,
   };
 })(Home);
