@@ -62,7 +62,7 @@ const COVIDStatusCard = ({ healthStatus, vaccineData, page }) => {
                     open={modalOpen}
                     onClose={handleModalClose}
                     onOpen={handleModalOpen}
-                    trigger={<Icon name={'angle right'} link/>}
+                    trigger={<Icon name={'angle double right'} link/>}
                   >
                     <Modal.Header
                       as={'h2'}

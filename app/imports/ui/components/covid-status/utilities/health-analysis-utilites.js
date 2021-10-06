@@ -1,18 +1,18 @@
 export const covidStatuses = [
   {
-    icon: 'exclamation',
-    iconColor: 'FFD60A',
+    icon: 'exclamation circle',
+    iconColor: '#FFD60A',
     header: 'Daily health check-in',
     content: 'Aloha, don\'t hesitate to spend a minute to do the daily check-in below. ' +
         'Stay safe and healthy!',
   }, {
-    icon: 'check',
+    icon: 'check circle',
     iconColor: '#00572e',
     header: 'You are clear to come to campus',
     healthPageHeader: 'You may report to campus / Anyone in Quarantine MUST continue to' +
         ' adhere to location restrictions',
   }, {
-    icon: 'x',
+    icon: 'times circle',
     iconColor: '#8b0400',
     header: 'Stay at home or in your campus residence',
     healthPageHeader: 'Stay home or in your campus residence. ' +

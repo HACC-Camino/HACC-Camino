@@ -87,10 +87,6 @@ class HealthStatusCollection extends BaseCollection {
     return this._collection.find({ owner: username }, { sort: { date: -1 } }).fetch();
   }
 
-  getLatestHealthStatus(username) {
-    return this.getHealthStatusesSortedDate(username)[0] || {};
-  }
-
   getTodayHealthStatus(username) {
     return this.getHealthStatusesSortedDate(username)
         .find(({ date }) => date.toLocaleDateString() === (new Date()).toLocaleDateString());
