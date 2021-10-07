@@ -26,10 +26,6 @@ class Landing extends React.Component {
           <Grid.Row>
             <SignUpModal/>
           </Grid.Row>
-
-          <Grid.Row>
-            <Upload/>
-          </Grid.Row>
         </Grid>
         </div>
         </div>
