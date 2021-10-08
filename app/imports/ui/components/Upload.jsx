@@ -4,8 +4,8 @@ const { S3 } = require('@aws-sdk/client-s3');
 const aws = require('aws-sdk');
 
 const config = {
-    REACT_APP_ACCESS_ID: 'AKIAZ3L5B3UO6UJ4MT65',
-    REACT_APP_ACCESS_KEY: 'k6gRB9sfMZoYY14aJ8jstymxOScR2uC3iuGkXGWp',
+    REACT_APP_ACCESS_ID: '',
+    REACT_APP_ACCESS_KEY: '',
     REACT_APP_BUCKET_NAME: 'testbucketlumicamino',
     REACT_APP_REGION: 'us-east-1',
 };
