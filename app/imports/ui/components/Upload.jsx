@@ -17,8 +17,8 @@ const config = {
 // });
 
 aws.config.update({
-    secretAcessKey: 'k6gRB9sfMZoYY14aJ8jstymxOScR2uC3iuGkXGWp',
-    accessKeyId: 'AKIAZ3L5B3UO6UJ4MT65',
+    secretAcessKey: '',
+    accessKeyId: '',
     region: config.REACT_APP_REGION,
 });
 
