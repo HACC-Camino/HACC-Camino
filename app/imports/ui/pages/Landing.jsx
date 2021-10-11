@@ -3,7 +3,7 @@ import { Grid, Image } from 'semantic-ui-react';
 import { withRouter } from 'react-router-dom';
 import SignInModal from '../components/landing/SignInModal';
 import SignUpModal from '../components/landing/SignUpModal';
-import Upload from '../components/Upload';
+import Upload2 from '../components/Upload2';
 
 const textStyle = { paddingTop: 50 };
 const padding = { paddingTop: 130 };
@@ -28,7 +28,7 @@ class Landing extends React.Component {
           </Grid.Row>
 
           <Grid.Row>
-            <Upload/>
+            <Upload2/>
           </Grid.Row>
         </Grid>
         </div>
