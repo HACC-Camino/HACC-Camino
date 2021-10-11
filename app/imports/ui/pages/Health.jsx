@@ -24,9 +24,19 @@ const Health = (
                 <Header as={'h1'} content={'Health Page'} color='yellow'/>
               </Grid.Column>
             </Grid.Row>
+            <Grid.Row>
+              <Grid.Column>
+                <Header as={'h3'} content={'Vaccine History'} color='yellow'/>
+              </Grid.Column>
+            </Grid.Row>
             <Grid.Column computer={16}>
               <VaccinationCard vaccineData={vaccineData}/>
             </Grid.Column>
+            <Grid.Row>
+            <Grid.Column>
+              <Header as={'h3'} content={'Status History'} color='yellow'/>
+            </Grid.Column>
+            </Grid.Row>
             <Grid.Column computer={16}>
                 {historyHealthStatus.map((healthStatus) => <COVIDStatusCard
                     key={healthStatus._id}
