@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import { Grid, Header, Loader } from 'semantic-ui-react';
 import { VaccineDatas } from '../../api/vaccine/VaccineDataCollection';
 import VaccinationCard from '../components/vaccine/VaccinationCard';
-import HistoryCard from '../components/covid-status/HistoryCard';
 import { HealthStatuses } from '../../api/health-status/HealthStatusCollection';
+import COVIDStatusCard from '../components/covid-status/COVIDStatusCard';
 
 const padding = { paddingTop: 30, marginLeft: 35 };
 
@@ -24,14 +24,16 @@ const Health = (
                 <Header as={'h1'} content={'Health Page'} color='yellow'/>
               </Grid.Column>
             </Grid.Row>
-
-              <Grid.Column computer={16}>
-                <HistoryCard healthStatus={historyHealthStatus} />
+            <Grid.Column computer={16}>
+              <VaccinationCard vaccineData={vaccineData}/>
+            </Grid.Column>
+            <Grid.Column computer={16}>
+                {historyHealthStatus.map((healthStatus) => <COVIDStatusCard
+                    key={healthStatus._id}
+                    healthStatus={healthStatus}
+                    vaccineData={vaccineData}
+                    page={'health'} />)}
               </Grid.Column>
-              <Grid.Column computer={16}>
-                <VaccinationCard vaccineData={vaccineData}/>
-              </Grid.Column>
-
           </Grid>
         </div>
       ) :
