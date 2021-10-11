@@ -3,7 +3,6 @@ import { Grid, Image } from 'semantic-ui-react';
 import { withRouter } from 'react-router-dom';
 import SignInModal from '../components/landing/SignInModal';
 import SignUpModal from '../components/landing/SignUpModal';
-import Upload from '../components/Upload';
 
 const textStyle = { paddingTop: 50 };
 const padding = { paddingTop: 130 };
