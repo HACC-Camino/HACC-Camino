@@ -78,13 +78,6 @@ class SideNavBar extends React.Component {
                 Health
               </IconGroup>
             </Menu.Item>
-            <Menu.Item style={{ width: '100%' }} id="navbar-Prereq"
-                       as={NavLink} exact to="/profile" onClick={this.handleShowClick}>
-              <IconGroup>
-                <Icon name='user'/>
-                My Profile
-              </IconGroup>
-            </Menu.Item>
             <SignOutConfirmation id="navbar-sign-out" as={NavLink}
                                  exact to="/" style={{ padding: 0, margin: 0 }}/>
           </Sidebar>
