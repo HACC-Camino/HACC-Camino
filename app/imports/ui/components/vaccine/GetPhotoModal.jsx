@@ -12,7 +12,7 @@ const GetPhotoModal = (vaccineData) => {
                 onClose={() => setOpen(false)}
                 onOpen={() => setOpen(true)}
                 open={open}
-                trigger={<Button color='yellow'>View Vaccination Card</Button>}
+                trigger={<Button className='ui form button'>View Vaccination Card</Button>}
                 closeIcon>
                 <Modal.Content scrolling image>
                     <Header>Your Vaccine Card</Header>
