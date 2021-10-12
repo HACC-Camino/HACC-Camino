@@ -1,6 +1,7 @@
 import React from 'react';
 import AWS from 'aws-sdk';
 import PropTypes from 'prop-types';
+import { Image } from 'semantic-ui-react';
 
 AWS.config.update({
     accessKeyId: '',
@@ -35,9 +36,9 @@ const GetPhoto = ({ vaccineData }) => {
 
     const something = isThereAPhoto(imageKey);
     if (something !== null) {
-        return <img src={something} alt=""/>;
+        return <Image src={something} alt=""/>;
     }
-    return <img src={'images/no_image_found.jpg'} alt=""/>;
+    return <Image src={'images/no_image_found.jpg'} alt=""/>;
 };
 
 GetPhoto.propTypes = {
