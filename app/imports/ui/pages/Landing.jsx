@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import SignInModal from '../components/landing/SignInModal';
 import SignUpModal from '../components/landing/SignUpModal';
 import Upload2 from '../components/Upload2';
+import GetPhoto from '../components/GetPhoto';
 
 const textStyle = { paddingTop: 50 };
 const padding = { paddingTop: 130 };
@@ -26,7 +27,8 @@ class Landing extends React.Component {
               <SignUpModal/>
             </Grid.Row>
             <Grid.Row>
-              <Upload2/>
+                {/*<Upload2/>*/}
+                {/*<GetPhoto/>*/}
             </Grid.Row>
           </Grid>
         </div>
