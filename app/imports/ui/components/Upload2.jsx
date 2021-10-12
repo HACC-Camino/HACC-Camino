@@ -5,8 +5,8 @@ const S3_BUCKET = 'lumi-camino-main';
 const REGION = 'us-west-1';
 
 AWS.config.update({
-    accessKeyId: '',
-    secretAccessKey: '',
+    accessKeyId: 'AKIAXQXJQCACZ5EF2AQF',
+    secretAccessKey: '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',
 });
 
 const myBucket = new AWS.S3({
@@ -34,12 +34,17 @@ const Upload2 = () => {
             }
             return result;
         };
+        // figures out what kind of file it is and appends to the randomly generated key.
+        const filetype = file.name.split('.')[1];
+        let filename = makeId(25);
+        filename = `${filename}.${filetype}`;
+        // console.log(filename);
 
         const params = {
             ACL: 'public-read',
             Body: file,
             Bucket: S3_BUCKET,
-            Key: file.name,
+            Key: filename,
         };
 
         myBucket.putObject(params)
@@ -49,12 +54,7 @@ const Upload2 = () => {
         .send((err) => {
             // eslint-disable-next-line no-console
             if (err) console.log(err);
-            // console.log(process.env.AWS_ACCESS_KEY_ID);
-            // console.log(process.env.AWS_SECRET_ACCESS_KEY);
-            // console.log(file.name);
-            console.log(makeId(25));
         });
-
     };
 
     return <div>
