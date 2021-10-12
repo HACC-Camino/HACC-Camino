@@ -7,6 +7,7 @@ import { VaccineDatas } from '../../api/vaccine/VaccineDataCollection';
 import VaccinationCard from '../components/vaccine/VaccinationCard';
 import HistoryCard from '../components/covid-status/HistoryCard';
 import { HealthStatuses } from '../../api/health-status/HealthStatusCollection';
+import GetPhotoModal from '../components/vaccine/GetPhotoModal';
 
 const padding = { paddingTop: 30, marginLeft: 35 };
 
@@ -31,7 +32,11 @@ const Health = (
               <Grid.Column computer={16}>
                 <VaccinationCard vaccineData={vaccineData}/>
               </Grid.Column>
-
+              <Grid.Row>
+                  <Grid.Column>
+                      <GetPhotoModal vaccineData={vaccineData}/>
+                  </Grid.Column>
+              </Grid.Row>
           </Grid>
         </div>
       ) :
@@ -50,7 +55,7 @@ export default withTracker(() => {
   && VaccineDatas.subscribeVaccine().ready()
   && username !== undefined;
   const historyHealthStatus = HealthStatuses.getHealthStatusesSortedDate(username);
-  console.log(historyHealthStatus);
+  // console.log(historyHealthStatus);
   const vaccineData = VaccineDatas.getUserVaccineData(username);
   return {
     ready,
