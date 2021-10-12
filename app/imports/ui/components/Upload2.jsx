@@ -5,8 +5,8 @@ const S3_BUCKET = 'lumi-camino-main';
 const REGION = 'us-west-1';
 
 AWS.config.update({
-    accessKeyId: 'AKIAXQXJQCACZ5EF2AQF',
-    secretAccessKey: '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',
+    accessKeyId: '',
+    secretAccessKey: '',
 });
 
 const myBucket = new AWS.S3({
