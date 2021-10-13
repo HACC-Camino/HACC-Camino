@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Card, Grid, Header, List } from 'semantic-ui-react';
 import AddVaccineDataModal from './AddVaccineDataModal';
 import GetPhotoModal from './GetPhotoModal';
-import Upload from '../Upload';
+import Upload from './Upload';
 
 const VaccinationCard = ({ vaccineData }) => {
   const getButton = () => {

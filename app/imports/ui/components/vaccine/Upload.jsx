@@ -3,7 +3,7 @@ import AWS from 'aws-sdk';
 import { Button, Input, Modal, Progress } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import swal from 'sweetalert';
-import { VaccineDataUpdateMethod } from '../../api/vaccine/VaccineDataCollection.methods';
+import { VaccineDataUpdateMethod } from '../../../api/vaccine/VaccineDataCollection.methods';
 
 const S3_BUCKET = 'lumi-camino-main';
 const REGION = 'us-west-1';
