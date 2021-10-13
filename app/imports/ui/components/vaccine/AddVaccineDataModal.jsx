@@ -16,7 +16,11 @@ import { VaccineDataDefineMethod } from '../../../api/vaccine/VaccineDataCollect
 const AddVaccineDataModal = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const handleModalOpen = () => setModalOpen(true);
-  const handleModalClose = () => setModalOpen(false);
+  const handleModalClose = () => {
+    setModalOpen(false);
+    // eslint-disable-next-line no-undef
+    window.location.reload();
+  };
   const allVaccines = ['Pfizer-BioNTech COVID-19', 'Moderna COVID-19',
   'Janssen COVID-19 (Johnson & Johnson)', 'AstraZeneca-AZD1222',
   'Sinopharm BIBP-SARS-CoV-2', 'Sinovac-SARS-CoV-2', 'Gamelya-Sputnik V',
@@ -77,8 +81,9 @@ const AddVaccineDataModal = () => {
       <DateField name='sDoseDate'
                  max={new Date()}
       />
-      <Header as='h3' dividing>Upload Vaccine</Header>
-      {/* Add 'upload vaccine card code here */}
+      <Header as='h3' dividing>How To Upload Vaccine Card</Header>
+      After submitting this form, you may upload your vaccine card by clicking
+       on the &apos;Upload Vaccine Card&apos; button shown on the page.
     </Modal.Content>
     <Modal.Actions>
       <SubmitField className="ui form button" value='Submit' />

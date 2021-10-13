@@ -19,10 +19,14 @@ class VaccineDataCollection extends BaseCollection {
       sDoseLotNum: String,
       sDoseDate: Date,
       sDoseSite: String,
+      awsKey: {
+        type: String,
+        optional: true,
+      },
     }));
   }
 
-  define({ owner, vaccineName, fDoseLotNum, fDoseDate, fDoseSite, sDoseLotNum, sDoseDate, sDoseSite }) {
+  define({ owner, vaccineName, fDoseLotNum, fDoseDate, fDoseSite, sDoseLotNum, sDoseDate, sDoseSite, awsKey }) {
     const docID = this._collection.insert({
       owner,
       vaccineName,
@@ -32,12 +36,13 @@ class VaccineDataCollection extends BaseCollection {
       sDoseLotNum,
       sDoseDate,
       sDoseSite,
+      awsKey,
     });
     return docID;
   }
 
   update(docID, { vaccineName, fDoseLotNum, fDoseDate, fDoseSite, sDoseLotNum,
-    sDoseDate, sDoseSite }) {
+    sDoseDate, sDoseSite, awsKey }) {
     const updateData = {};
     if (vaccineName) {
       updateData.vaccineName = vaccineName;
@@ -59,6 +64,9 @@ class VaccineDataCollection extends BaseCollection {
     }
     if (sDoseSite) {
       updateData.vaccineName = sDoseSite;
+    }
+    if (awsKey) {
+      updateData.awsKey = awsKey;
     }
     this._collection.update(docID, { $set: updateData });
   }

@@ -62,7 +62,7 @@ export default withTracker(() => {
   && VaccineDatas.subscribeVaccine().ready()
   && username !== undefined;
   const historyHealthStatus = HealthStatuses.getHealthStatusesSortedDate(username);
-  console.log(historyHealthStatus);
+  // console.log(historyHealthStatus);
   const vaccineData = VaccineDatas.getUserVaccineData(username);
   return {
     ready,
